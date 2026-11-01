@@ -5,7 +5,7 @@ const app = express();
 
 // CORS que permite TUDO (apenas para desenvolvimento)
 app.use(cors({
-  origin: '*',  // ← PERMITE QUALQUER ORIGEM
+  origin: 'https://painel-admin-cyan-phi.vercel.app',
   credentials: true
 }));
 
