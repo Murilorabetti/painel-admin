@@ -46,7 +46,7 @@ app.get('/test-mobile', (req, res) => {
   });
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const HOST = '0.0.0.0';  // ← ACEITA CONEXÕES EXTERNAS
 
 app.listen(PORT, HOST, () => {
