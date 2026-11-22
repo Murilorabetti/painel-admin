@@ -292,7 +292,7 @@ export default function Home() {
     navigate("/usuarios");
   } else if (card.title === "Configurações") {
     navigate("/configuracoes");
-  } else if (card.title === "Relatórios") { // <-- Verifique se esta linha existe!
+  } else if (card.title === "Relatórios") { // <-- Verifique se esta linha existe
     navigate("/relatorios");
   } else {
     alert(`Abrindo ${card.title}`);
