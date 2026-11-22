@@ -5,28 +5,14 @@ import { useNavigate } from "react-router-dom";
 export default function Painel() {
   const navigate = useNavigate();
 
-  // Array com os dados dos novos blocos (títulos e imagens diferentes)
+  // Array com os novos blocos (para não precisar repetir código HTML)
   const novosBlocos = [
-    {
-      titulo: "Usuários Ativos",
-      imagem: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=500&auto=format&fit=crop",
-      corBorda: "rgba(0, 255, 255, 0.5)", // Ciano
-    },
-    {
-      titulo: "Relatórios",
-      imagem: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500&auto=format&fit=crop",
-      corBorda: "rgba(255, 0, 255, 0.5)", // Magenta
-    },
-    {
-      titulo: "Segurança",
-      imagem: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500&auto=format&fit=crop",
-      corBorda: "rgba(255, 165, 0, 0.5)", // Laranja
-    },
-    {
-      titulo: "Configurações",
-      imagem: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=500&auto=format&fit=crop",
-      corBorda: "rgba(0, 255, 0, 0.5)", // Verde
-    }
+    { titulo: "Usuários Ativos", imagem: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=500&auto=format&fit=crop", cor: "rgba(0, 255, 255, 0.5)" },
+    { titulo: "Relatórios", imagem: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500&auto=format&fit=crop", cor: "rgba(255, 0, 255, 0.5)" },
+    { titulo: "Segurança", imagem: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500&auto=format&fit=crop", cor: "rgba(255, 165, 0, 0.5)" },
+    { titulo: "Configurações", imagem: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=500&auto=format&fit=crop", cor: "rgba(0, 255, 0, 0.5)" },
+    { titulo: "Notificações", imagem: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=500&auto=format&fit=crop", cor: "rgba(255, 0, 0, 0.5)" },
+    { titulo: "Backups", imagem: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=500&auto=format&fit=crop", cor: "rgba(255, 255, 0, 0.5)" }
   ];
 
   return (
@@ -47,27 +33,6 @@ export default function Painel() {
         background: "rgba(0, 0, 0, 0.6)",
         zIndex: 1
       }} />
-
-      {/* CARD DA MENSAGEM NO CANTO SUPERIOR DIREITO */}
-      <div style={{ 
-        position: "absolute",
-        top: "20px", 
-        right: "20px",
-        background: "rgba(30, 30, 30, 0.8)", 
-        padding: "20px", 
-        borderRadius: "15px", 
-        border: "1px solid rgba(0, 255, 0, 0.3)", 
-        boxShadow: "0 0 15px rgba(0, 255, 0, 0.1)", 
-        maxWidth: "300px",
-        backdropFilter: "blur(10px)", 
-        zIndex: 2,
-        textAlign: "center"
-      }}>
-        <div style={{ fontSize: "1.5rem", marginBottom: "10px" }}>✨</div>
-        <p style={{ fontSize: "0.95rem", lineHeight: "1.5", color: "#e0e0e0", fontStyle: "italic", margin: 0 }}>
-          "Nunca desista do seu sonho mesmo que pareça ser difícil, mas lembre-se que Deus sabe de todas as coisas, ele é o dono do tempo e pra ele nada é impossível, só lute e deixe nas mãos dele!"
-        </p>
-      </div>
 
       {/* Conteúdo da página */}
       <div style={{ position: "relative", zIndex: 2, padding: "40px", color: "#fff" }}>
@@ -94,58 +59,50 @@ export default function Painel() {
           <p style={{ color: "#ccc", marginBottom: "40px" }}>Bem-vindo ao núcleo do sistema.</p>
         </div>
 
-        {/* BLOCO DE ACESSOS (O original) */}
-        <div style={{ 
-          position: "absolute", 
-          top: "250px", 
-          left: "40px", 
-          width: "350px", 
-          padding: "20px", 
-          borderRadius: "15px", 
-          background: "rgba(10, 25, 47, 0.85)", 
-          border: "1px solid rgba(0, 150, 255, 0.5)", 
-          boxShadow: "0 0 20px rgba(0, 150, 255, 0.3)", 
-          zIndex: 2,
-          backdropFilter: "blur(8px)"
-        }}>
-          <h2 style={{ fontSize: "1.2rem", marginBottom: "15px", color: "#fff" }}>Acessos do Sistema ✔️ </h2>
-          <div style={{ display: "flex", alignItems: "flex-end", gap: "10px", height: "120px", justifyContent: "center" }}>
-            {[40, 70, 50, 90, 60, 100, 80].map((height, index) => (
-              <div key={index} style={{
-                width: "25px",
-                height: `${height}%`,
-                background: "linear-gradient(to top, #0F0, #00F)",
-                borderRadius: "3px 3px 0 0",
-                transition: "height 1s ease",
-                boxShadow: "0 0 10px rgba(0, 255, 0, 0.5)"
-              }} />
-            ))}
-          </div>
-        </div>
-
-        {/* NOVOS BLOCOS (Grid de 4 cards interativos) */}
+        {/* CONTAINER DA GRADE (Acessos + 6 Novos Blocos) */}
         <div style={{
-          position: "absolute",
-          top: "250px",
-          left: "420px", // Fica ao lado do bloco de acessos
-          width: "calc(100% - 460px)", // Ocupa o resto da tela
-          maxWidth: "600px",
           display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)", // 2 colunas
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
           gap: "20px",
-          zIndex: 2
+          marginTop: "20px"
         }}>
+          
+          {/* 1. Bloco de Acessos (O original) */}
+          <div style={{ 
+            padding: "20px", 
+            borderRadius: "15px", 
+            background: "rgba(10, 25, 47, 0.85)", 
+            border: "1px solid rgba(0, 150, 255, 0.5)", 
+            boxShadow: "0 0 20px rgba(0, 150, 255, 0.3)", 
+            backdropFilter: "blur(8px)"
+          }}>
+            <h2 style={{ fontSize: "1.2rem", marginBottom: "15px", color: "#fff" }}>Acessos do Sistema</h2>
+            <div style={{ display: "flex", alignItems: "flex-end", gap: "10px", height: "120px", justifyContent: "center" }}>
+              {[40, 70, 50, 90, 60, 100, 80].map((height, index) => (
+                <div key={index} style={{
+                  width: "25px",
+                  height: `${height}%`,
+                  background: "linear-gradient(to top, #0F0, #00F)",
+                  borderRadius: "3px 3px 0 0",
+                  transition: "height 1s ease",
+                  boxShadow: "0 0 10px rgba(0, 255, 0, 0.5)"
+                }} />
+              ))}
+            </div>
+          </div>
+
+          {/* 2. Os 6 Novos Blocos */}
           {novosBlocos.map((bloco, index) => (
             <div key={index} style={{
-              height: "140px",
+              height: "180px",
               borderRadius: "15px",
               position: "relative",
               overflow: "hidden",
               backgroundImage: `url('${bloco.imagem}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              border: `1px solid ${bloco.corBorda}`,
-              boxShadow: `0 0 15px ${bloco.corBorda}`,
+              border: `1px solid ${bloco.cor}`,
+              boxShadow: `0 0 15px ${bloco.cor}`,
               cursor: "pointer",
               transition: "transform 0.3s ease",
               backdropFilter: "blur(5px)"
@@ -168,7 +125,7 @@ export default function Painel() {
                 left: "20px",
                 margin: 0,
                 zIndex: 2,
-                fontSize: "1.1rem",
+                fontSize: "1.2rem",
                 fontWeight: "bold",
                 textShadow: "1px 1px 3px rgba(0,0,0,0.8)"
               }}>
@@ -176,6 +133,7 @@ export default function Painel() {
               </h3>
             </div>
           ))}
+
         </div>
 
       </div>
