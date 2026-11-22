@@ -10,7 +10,8 @@ import Register from "./pages/register";
 import Usuarios from "./pages/Usuarios"; 
 import Configuracoes from "./pages/Configuracoes";
 import Relatorios from "./pages/Relatorios"; 
-import Notificacoes from "./pages/Notificacoes"; // Importação correta
+import Notificacoes from "./pages/Notificacoes"; 
+import Seguranca from "./pages/Seguranca"; // <-- NOVO IMPORT AQUI
 
 export default function App() {
   return (
@@ -24,9 +25,10 @@ export default function App() {
         <Route path="/usuarios" element={<Usuarios />} />
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/relatorios" element={<Relatorios />} />
+        <Route path="/notificacoes" element={<Notificacoes />} />
         
-        {/* A ROTA CORRETA FICA AQUI DENTRO */}
-        <Route path="/notificacoes" element={<Notificacoes />} /> 
+        {/* NOVA ROTA DE SEGURANÇA AQUI DENTRO */}
+        <Route path="/seguranca" element={<Seguranca />} /> 
       </Routes>
     </BrowserRouter>
   );

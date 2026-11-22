@@ -294,8 +294,10 @@ export default function Home() {
     navigate("/configuracoes");
   } else if (card.title === "Relatórios") {
     navigate("/relatorios");
-  } else if (card.title === "Notificações") { // <-- Adicione isso
+  } else if (card.title === "Notificações") {
     navigate("/notificacoes");
+  } else if (card.title === "Segurança") { // <-- Adicione isso
+    navigate("/seguranca");
   } else {
     alert(`Abrindo ${card.title}`);
   }
