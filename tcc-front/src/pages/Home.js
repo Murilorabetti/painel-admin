@@ -286,18 +286,18 @@ export default function Home() {
               if(!isMobile) e.currentTarget.querySelector('.card-icon').style.transform = 'rotate(0) scale(1)';
             }}
             onClick={() => {
-              if (card.title === "Painel de Controle") {
-                navigate("/painel");
-              } else if (card.title === "Usuários") {
-                navigate("/usuarios");
-              } else if (card.title === "Configurações") {
-                navigate("/configuracoes");
-              } else if (card.title === "Relatórios") { // <-- NOVA NAVEGAÇÃO AQUI
-                navigate("/relatorios");
-              } else {
-                alert(`Abrindo ${card.title}`);
-              }
-            }}
+  if (card.title === "Painel de Controle") {
+    navigate("/painel");
+  } else if (card.title === "Usuários") {
+    navigate("/usuarios");
+  } else if (card.title === "Configurações") {
+    navigate("/configuracoes");
+  } else if (card.title === "Relatórios") { // <-- Verifique se esta linha existe!
+    navigate("/relatorios");
+  } else {
+    alert(`Abrindo ${card.title}`);
+  }
+}}
           >
             <h3 style={styles.cardTitle}>
               <span className="card-icon" style={styles.cardIcon}>{card.icon}</span>
