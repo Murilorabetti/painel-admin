@@ -113,10 +113,10 @@ export default function Home() {
     },
     // CARD DO CLIMA (AGORA COM A IMAGEM DA SALA)
     weatherCard: {
-      backgroundImage: "url('/sala.jpg')", // <-- AQUI ESTÁ A IMAGEM DA SALA
+      backgroundImage: "url('/sala.jpg')", 
       backgroundSize: "cover",
       backgroundPosition: "center",
-      minHeight: isMobile ? "250px" : "400px", // Aumentei um pouco a altura para a sala aparecer bem
+      minHeight: isMobile ? "250px" : "400px", 
       color: "white",
       padding: "30px",
       borderRadius: "20px",
@@ -292,6 +292,8 @@ export default function Home() {
                 navigate("/usuarios");
               } else if (card.title === "Configurações") {
                 navigate("/configuracoes");
+              } else if (card.title === "Relatórios") { // <-- NOVA NAVEGAÇÃO AQUI
+                navigate("/relatorios");
               } else {
                 alert(`Abrindo ${card.title}`);
               }

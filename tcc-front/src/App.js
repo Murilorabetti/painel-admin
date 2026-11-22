@@ -9,6 +9,10 @@ import Painel from "./pages/Painel";
 import Register from "./pages/register";
 import Usuarios from "./pages/Usuarios"; 
 import Configuracoes from "./pages/Configuracoes"; // <-- NOVO IMPORT AQUI
+import Relatorios from "./pages/Relatorios"; // <-- Importe aqui
+
+// ... dentro das Routes:
+<Route path="/relatorios" element={<Relatorios />} /> {/* <-- Adicione essa linha */}
 
 export default function App() {
   return (
