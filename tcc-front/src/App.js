@@ -8,11 +8,8 @@ import Login from "./pages/login";
 import Painel from "./pages/Painel"; 
 import Register from "./pages/register";
 import Usuarios from "./pages/Usuarios"; 
-import Configuracoes from "./pages/Configuracoes"; // <-- NOVO IMPORT AQUI
-import Relatorios from "./pages/Relatorios"; // <-- Importe aqui
-
-// ... dentro das Routes:
-<Route path="/relatorios" element={<Relatorios />} /> {/* <-- Adicione essa linha */}
+import Configuracoes from "./pages/Configuracoes";
+import Relatorios from "./pages/Relatorios"; // <-- NOVO IMPORT
 
 export default function App() {
   return (
@@ -24,9 +21,8 @@ export default function App() {
         <Route path="/painel" element={<Painel />} />
         <Route path="/register" element={<Register />} />
         <Route path="/usuarios" element={<Usuarios />} />
-        
-        {/* NOVA ROTA AQUI */}
-        <Route path="/configuracoes" element={<Configuracoes />} /> 
+        <Route path="/configuracoes" element={<Configuracoes />} />
+        <Route path="/relatorios" element={<Relatorios />} /> {/* <-- NOVA ROTA */}
       </Routes>
     </BrowserRouter>
   );
