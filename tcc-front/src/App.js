@@ -10,6 +10,10 @@ import Register from "./pages/register";
 import Usuarios from "./pages/Usuarios"; 
 import Configuracoes from "./pages/Configuracoes";
 import Relatorios from "./pages/Relatorios"; // <-- NOVO IMPORT
+import Notificacoes from "./pages/Notificacoes"; // <-- Importe aqui
+
+// ... dentro das Routes:
+<Route path="/notificacoes" element={<Notificacoes />} /> {/* <-- Adicione essa linha */}
 
 export default function App() {
   return (
