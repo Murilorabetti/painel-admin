@@ -9,11 +9,8 @@ import Painel from "./pages/Painel";
 import Register from "./pages/register";
 import Usuarios from "./pages/Usuarios"; 
 import Configuracoes from "./pages/Configuracoes";
-import Relatorios from "./pages/Relatorios"; // <-- NOVO IMPORT
-import Notificacoes from "./pages/Notificacoes"; // <-- Importe aqui
-
-// ... dentro das Routes:
-<Route path="/notificacoes" element={<Notificacoes />} /> {/* <-- Adicione essa linha */}
+import Relatorios from "./pages/Relatorios"; 
+import Notificacoes from "./pages/Notificacoes"; // Importação correta
 
 export default function App() {
   return (
@@ -26,7 +23,10 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/usuarios" element={<Usuarios />} />
         <Route path="/configuracoes" element={<Configuracoes />} />
-        <Route path="/relatorios" element={<Relatorios />} /> {/* <-- NOVA ROTA */}
+        <Route path="/relatorios" element={<Relatorios />} />
+        
+        {/* A ROTA CORRETA FICA AQUI DENTRO */}
+        <Route path="/notificacoes" element={<Notificacoes />} /> 
       </Routes>
     </BrowserRouter>
   );
