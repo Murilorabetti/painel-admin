@@ -304,7 +304,7 @@ export default function Home() {
     navigate("/seguranca");
   } else if (card.title === "Usuários Ativos") {
     navigate("/usuarios-ativos");
-  } else if (card.title === "Backups") { // <-- NOVA CONDIÇÃO
+  } else if (card.title === "Backups") {
     navigate("/backups");
   } else {
     alert(`Abrindo ${card.title}`);
