@@ -14,7 +14,7 @@ export default function Notificacoes() {
       mensagem: "Adriana Rabetti acabou de se registrar no sistema.",
       tempo: "Há 5 minutos",
       icone: "✅",
-      cor: "#00ffcc" // Ciano
+      cor: "#00ffcc"
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export default function Notificacoes() {
       mensagem: "Múltiplas tentativas de login falhas detectadas no IP 192.168.1.55.",
       tempo: "Há 20 minutos",
       icone: "⚠️",
-      cor: "#ffaa00" // Laranja
+      cor: "#ffaa00"
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export default function Notificacoes() {
       mensagem: "O backup automático dos dados foi finalizado com sucesso.",
       tempo: "Há 2 horas",
       icone: "💾",
-      cor: "#00aaff" // Azul
+      cor: "#00aaff"
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ export default function Notificacoes() {
       mensagem: "O servidor atingiu 90% de uso de CPU. Verifique os processos.",
       tempo: "Ontem às 14:30",
       icone: "🔥",
-      cor: "#ff3366" // Rosa/Vermelho
+      cor: "#ff3366"
     }
   ];
 
@@ -58,7 +58,7 @@ export default function Notificacoes() {
     <div style={{
       position: "relative",
       minHeight: "100vh",
-      background: "#0b0f19", // Fundo escuro profundo
+      background: "#0b0f19",
       color: "#fff",
       padding: "40px",
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
@@ -72,7 +72,7 @@ export default function Notificacoes() {
         backgroundImage: "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        opacity: 0.05, // Bem apagada
+        opacity: 0.05,
         zIndex: 0
       }} />
 
@@ -128,7 +128,7 @@ export default function Notificacoes() {
               background: "rgba(20, 30, 45, 0.6)",
               backdropFilter: "blur(10px)",
               border: "1px solid rgba(255, 255, 255, 0.05)",
-              borderLeft: `4px solid ${notif.cor}`, // Borda colorida na esquerda
+              borderLeft: `4px solid ${notif.cor}`,
               borderRadius: "12px",
               padding: "20px",
               display: "flex",

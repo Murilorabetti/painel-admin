@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Configuracoes() {
   const navigate = useNavigate();
-  // Estado para simular os botões de ligar/desligar
   const [notificacoes, setNotificacoes] = useState(true);
   const [modoEscuro, setModoEscuro] = useState(true);
   const [autoBackup, setAutoBackup] = useState(false);
@@ -13,7 +12,7 @@ export default function Configuracoes() {
     <div style={{
       position: "relative",
       minHeight: "100vh",
-      background: "#0a0f18", // Fundo azul escuro quase preto
+      background: "#0a0f18",
       color: "#fff",
       padding: "40px",
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
@@ -27,7 +26,7 @@ export default function Configuracoes() {
         backgroundImage: "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        opacity: 0.1, // Deixa a imagem bem apagada no fundo
+        opacity: 0.1,
         zIndex: 0
       }} />
 
@@ -55,12 +54,7 @@ export default function Configuracoes() {
 
         {/* Título */}
         <div style={{ marginBottom: "40px" }}>
-          <h1 style={{ 
-            fontSize: "3rem", 
-            fontWeight: "800", 
-            margin: 0,
-            color: "#fff"
-          }}>
+          <h1 style={{ fontSize: "3rem", fontWeight: "800", margin: 0, color: "#fff" }}>
             Configurações <span style={{ color: "#00ffcc" }}>⚙️</span>
           </h1>
           <p style={{ color: "#8892b0", fontSize: "1.1rem", marginTop: "10px" }}>
@@ -80,7 +74,6 @@ export default function Configuracoes() {
                 <p style={descStyle}>Receba alertas em tempo real sobre o sistema.</p>
               </div>
             </div>
-            {/* Botão Toggle */}
             <div 
               onClick={() => setNotificacoes(!notificacoes)}
               style={{

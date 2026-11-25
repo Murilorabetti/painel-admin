@@ -70,9 +70,13 @@ export default function Home() {
       transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
       transition: 'opacity 0.8s ease, transform 0.8s ease'
     },
-    header: {
-      background: "linear-gradient(90deg, rgba(30, 30, 47, 0.8) 0%, rgba(42, 27, 56, 0.8) 100%)",
-      backdropFilter: "blur(10px)", 
+        header: {
+      // TROQUE ESTA LINHA:
+      // background: "linear-gradient(90deg, rgba(30, 30, 47, 0.8) 0%, rgba(42, 27, 56, 0.8) 100%)",
+      
+      // POR ESTA (Preto semi-transparente):
+      background: "#000000", 
+       
       color: "white",
       padding: isMobile ? "20px" : "40px", 
       borderRadius: "20px",
@@ -296,8 +300,12 @@ export default function Home() {
     navigate("/relatorios");
   } else if (card.title === "Notificações") {
     navigate("/notificacoes");
-  } else if (card.title === "Segurança") { // <-- Adicione isso
+  } else if (card.title === "Segurança") {
     navigate("/seguranca");
+  } else if (card.title === "Usuários Ativos") {
+    navigate("/usuarios-ativos");
+  } else if (card.title === "Backups") { // <-- NOVA CONDIÇÃO
+    navigate("/backups");
   } else {
     alert(`Abrindo ${card.title}`);
   }

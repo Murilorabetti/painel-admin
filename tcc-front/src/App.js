@@ -2,7 +2,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-// Importando as suas páginas
 import Home from "./pages/Home";
 import Login from "./pages/login"; 
 import Painel from "./pages/Painel"; 
@@ -11,7 +10,9 @@ import Usuarios from "./pages/Usuarios";
 import Configuracoes from "./pages/Configuracoes";
 import Relatorios from "./pages/Relatorios"; 
 import Notificacoes from "./pages/Notificacoes"; 
-import Seguranca from "./pages/Seguranca"; // <-- NOVO IMPORT AQUI
+import Seguranca from "./pages/Seguranca"; 
+import UsuariosAtivos from "./pages/UsuariosAtivos";
+import Backups from "./pages/Backups"; // <-- NOVO IMPORT
 
 export default function App() {
   return (
@@ -26,9 +27,9 @@ export default function App() {
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/relatorios" element={<Relatorios />} />
         <Route path="/notificacoes" element={<Notificacoes />} />
-        
-        {/* NOVA ROTA DE SEGURANÇA AQUI DENTRO */}
-        <Route path="/seguranca" element={<Seguranca />} /> 
+        <Route path="/seguranca" element={<Seguranca />} />
+        <Route path="/usuarios-ativos" element={<UsuariosAtivos />} />
+        <Route path="/backups" element={<Backups />} /> {/* <-- NOVA ROTA */}
       </Routes>
     </BrowserRouter>
   );
